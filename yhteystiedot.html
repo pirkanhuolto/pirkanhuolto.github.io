@@ -86,54 +86,56 @@
     <div class="row">
       <div class="well">
 
-        <div id="response"></div>
-        <form class="form-horizontal">
-          <fieldset>
-
             <h2>Yhteydenotto</h2>
             <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="nimi">Name</label>
-              <div class="col-md-4">
-                <input id="nimi" name="nimi" type="text" placeholder="" class="form-control input-md" required="">
+            <form id="contact" class="form-horizontal">
+              <fieldset>
 
-              </div>
-            </div>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="name">Nimi</label>
+                  <div class="col-md-4">
+                    <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
 
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="sahkoposti">Sahkoposti</label>
-              <div class="col-md-4">
-                <input id="sahkoposti" name="sahkoposti" type="text" placeholder="" class="form-control input-md" required="">
+                  </div>
+                </div>
 
-              </div>
-            </div>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="email">Sähkoposti</label>
+                  <div class="col-md-4">
+                    <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
 
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="sahkoposti">Puhelinnumero</label>
-              <div class="col-md-4">
-                <input id="puhelinnumero" name="puhelinnumero" type="text" placeholder="" class="form-control input-md" required="">
+                  </div>
+                </div>
 
-              </div>
-            </div>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="phone">Puhelinnumero</label>
+                  <div class="col-md-4">
+                    <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md" required="">
 
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="viesti"></label>
-              <div class="col-md-4">
-                <input id="viesti" name="viesti" type="text" placeholder="" class="form-control input-md" required="">
+                  </div>
+                </div>
 
-              </div>
-            </div>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="message"></label>
+                  <div class="col-md-4">
+                    <textarea id="message" name="message" placeholder="" class="form-control input-md" rows="5" required=""></textarea>
 
-            <!-- Button -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="laheta"></label>
-              <div class="col-md-4">
-                <button id="laheta" name="laheta" class="btn btn-primary">Laheta</button>
-              </div>
-            </div>
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="laheta"></label>
+                  <div class="col-md-4">
+                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Lähetä</button>
+                  </div>
+                </div>
+
+                <p id="response" class="text-info"></p>
 
           </fieldset>
         </form>

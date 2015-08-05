@@ -4,7 +4,7 @@ $(document).ready(function(){
   Parse.initialize("TAaeZQjEVaG8YcT0h4wg1U3gkb5UCqtsV5xTU51P", "a4m8n9fdg19LfpYdYEZOLms260pDk7IVhgnwNjwQ");
 
   // Setup the form to watch for the submit event
-  $('#myForm').submit(function(e){
+  $('#contact').submit(function(e){
     e.preventDefault();
 
     // Grab the elements from the form to make up
@@ -21,12 +21,12 @@ $(document).ready(function(){
     // pass our 'data' object to it
     Parse.Cloud.run("main", data, {
       success: function(object) {
-        $('#response').html('Viesti lahetetty!').addClass('success').fadeIn('fast');
+        $('#response').html('Viesti lähetetty!').addClass('success').fadeIn('fast');
       },
 
       error: function(object, error) {
         console.log(error);
-        $('#response').html('Virhe! Viestia ei lahetetty!').addClass('error').fadeIn('fast');
+        $('#response').html('Virhe! Viestiä ei lähetetty!').addClass('error').fadeIn('fast');
       }
     });
 
