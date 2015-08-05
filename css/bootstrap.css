@@ -5,7 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -4302,8 +4302,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 30px;
+  line-height: 30px;
   height: 50px;
 }
 .navbar-brand:hover,
@@ -4524,7 +4524,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: #eeeeee;
 }
 .navbar-default .navbar-brand {
-  color: #444444;
+  color: #15317E;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -4532,10 +4532,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #444444;
+  color: #15317E;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #444444;
+  color: #15317E;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -4545,13 +4545,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #444444;
+  color: #15317E;
   background-color: #eeeeee;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
-  color: #444444;
+  color: #15317E;
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
@@ -4620,11 +4620,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #e6e6e6;
 }
 .navbar-inverse .navbar-brand {
-  color: #444444;
+  color: #15317E;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #777777;
+  color: #15317E;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
