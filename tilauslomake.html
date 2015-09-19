@@ -6,10 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="Anna Ruokonen">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+  <script src="/js/order.js"></script>
+
 
     <title>Pirkanmaan Kotihuolto</title>
 
@@ -74,7 +79,8 @@
                   <li><a href="asiakastyytyvaisyyslomake.html">PALAUTELOMAKE</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="chat.html">HUOLTOCHAT</a></li>
-                </ul>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="tilauslomake.html">HUOLTOTILAUS</a></li>
               </li>
 
               <li><h4><span class="glyphicon glyphicon-phone-alt"></span>  0456 453 444</h4></li>
@@ -88,7 +94,6 @@
         <!-- /.container -->
   </nav>
 
-  <!-- Page Content -->
   <div class="container">
 
     <div class="panel panel-primary">
@@ -96,6 +101,11 @@
     SÄHKOINEN HUOLTOTILAUS
       </div>
       <div class="panel-body">
+        <p>Tämä on sähkoinen huoltotilauslomake, jolla voit tilata haluamasi huoltopaketin. Voit asettaa toivotun huoltopäivämäärän
+          tilauslomakkeeseen. Otamme aina henkilökohtaisesti yhteyttä ja vahvistamme ajankohdan kanssanne.
+
+            <!-- Kun lähetät tilauksen, siitä
+            tulee aina myos tilausvahvistus sähköpostilla määrittelemääsi osoitteeseen.-->        </p>
 
         <form id="order" class="form-horizontal">
           <fieldset>
@@ -140,12 +150,12 @@
                             <label class="col-md-4 control-label" for="perus"></label>
                             <div class="col-md-4">
                               <label class="radio" for="perus-1">
-                                <input type="radio" name="perus" id="perus1" value="100" checked="checked">
-                                Alle 200 neliömetrin kodit: 199€ (norm. 289€)
+                                <input type="radio" name="perus" id="perus1" value="KotihuoltoPerus alle150m2" checked="checked">
+                                Alle 150 neliömetrin kodit: 199€ (norm. 289€)
                               </label>
                               <label class="radio" for="perus-2">
-                                <input type="radio" name="perus" id="perus2" value="200">
-                                Yli 200 neliömetrin kodit: 249€ (norm. 349€)
+                                <input type="radio" name="perus" id="perus2" value="KotihuoltoPerus yli150m2">
+                                Yli 150 neliömetrin kodit: 249€ (norm. 349€)
                               </label>
 
                             </div>
@@ -209,12 +219,12 @@
                               <label class="col-md-4 control-label" for="laaja"></label>
                               <div class="col-md-4">
                                 <label class="radio" for="laaja-1">
-                                  <input type="radio" name="perus" id="laaja1" value="100" >
-                                  Alle 200 neliömetrin kodit: 349€ (norm. 499€)
+                                  <input type="radio" name="perus" id="laaja1" value="KotihuoltoLaaja alle150m2" >
+                                  Alle 150 neliömetrin kodit: 349€ (norm. 499€)
                                 </label>
                                 <label class="radio" for="laaja-2">
-                                  <input type="radio" name="perus" id="laaja2" value="200">
-                                  Yli 200 neliömetrin kodit: 399€ (norm. 569€)
+                                  <input type="radio" name="perus" id="laaja2" value="KotihuoltoLaaja yli150m2">
+                                  Yli 150 neliömetrin kodit: 399€ (norm. 569€)
                                 </label>
 
                               </div>
@@ -232,7 +242,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Valitse toivottu huoltopaivä</label>
                 <div class="col-md-4">
-                  <label for="meeting"></label><input id="meeting" type="date" value=""/>
+                  <label for="date"></label><input id="date" type="date" value=""/>
 
                 </div>
               </div>
@@ -248,14 +258,14 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Katuosoite</label>
                 <div class="col-md-4">
-                  <input id="address" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                  <input id="address" name="address" type="text" placeholder="" class="form-control input-md" required="">
 
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Postinumero ja postitoimipaikka</label>
                 <div class="col-md-4">
-                  <input id="address" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                  <input id="postaddress" name="postaddress" type="text" placeholder="" class="form-control input-md" required="">
 
                 </div>
               </div>
