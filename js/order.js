@@ -8,7 +8,7 @@ $(document).ready(function() {
     alert('Huoltovaraus tehty: ' + eventData.title + " start: "
     + moment(eventData.start).format() +" end:" + moment(eventData.end).format());
     e.preventDefault();
-    $.getJSON("https://script.google.com/macros/s/AKfycbzA6rnYphXiuedrushdbIoEkH82z91sJ_WCROyfqeIPpAHQQ97m/exec"+"?callback=?",
+    $.getJSON("https://script.google.com/macros/s/AKfycbxN37PWV3BI53H6XN-T_ZtyuXWb3Y2eomrsx_mE6_TfmOoGags/exec"+"?callback=?",
     {calevent:JSON.stringify(eventData)},
     function (data) {
       //	alert(JSON.stringify(data));
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
     // Send data to customer database
 
-    $.getJSON("https://script.google.com/macros/s/AKfycbyjBoerBY9DKmk64ikvBbdhKK-7K99-82n1P-6l5HQMrlft5S2U/exec"+"?callback=?",
+    $.getJSON("https://script.google.com/macros/s/AKfycbwsgdyw2I8qlppTKMTsYfVkmVmEQNPxYJr7ip3_7_MFwyuajqE/exec"+"?callback=?",
     {user:JSON.stringify(data)},
     function (data) {
       //	alert(JSON.stringify(data));
@@ -143,10 +143,11 @@ $(document).ready(function() {
     utc: false,
     timezone:'local',
     transmitTZD: true,
-    googleCalendarApiKey: 'AIzaSyBG90v86lLbctyjPPfnwcP6qkjRVYd3Aq8',
+    googleCalendarApiKey: 'AIzaSyApcrrL2yKm6u6UI05X7F8P5c5XSI_hfZk',
     //events: 'idfukec862tmei8ev11ilimujc@group.calendar.google.com'
+    // https://www.google.com/calendar/embed?src=pirkanmaankotihuolto%40gmail.com&ctz=Europe/Helsinki
     events: {
-      url:  'idfukec862tmei8ev11ilimujc@group.calendar.google.com',
+      url:  'pirkanmaankotihuolto@gmail.com',
       error: function() {
         $('#script-warning').show();
       },
