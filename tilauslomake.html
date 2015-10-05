@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Anna Ruokonen">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link href='css/fullcalendar.css' rel='stylesheet'>
+  <meta charset='utf-8' />
+  <link href='css/fullcalendar.css' rel='stylesheet' />
   <script src='lib/moment.min.js'></script>
   <script src='lib/jquery.min.js'></script>
   <script src='js/fullcalendar.js'></script>
@@ -23,23 +16,13 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="http://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
- <script src="js/order.js"></script>
-
+  <script src="js/order.js"></script>
 
   <title>Pirkanmaan Kotihuolto</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.css" rel="stylesheet">
-
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
   <script>
   var eventData;
   var eventId;
@@ -50,7 +33,7 @@
   body {
     margin: 40px 10px;
     padding: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     font-size: 14px;
   }
 
@@ -60,158 +43,102 @@
   }
 
   </style>
-
 </head>
-
 <body>
 
 
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.html" ><span><img style="max-width:70px; margin-top: -5px;"
-					src="images/logo_stamp.jpg"></span> PIRKANMAAN KOTIHUOLTO OY</a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav" >
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" ><span><img style="max-width:70px; margin-top: -5px;"
+          src="images/logo_stamp.jpg"></span> PIRKANMAAN KOTIHUOLTO OY</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" >
 
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PALVELUT <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="palvelut.html">HUOLTOPAKETIT</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="pihatyot.html">PIHATYÖT</a></li>
-							</ul>
-						</li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PALVELUT <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="palvelut.html">HUOLTOPAKETIT</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="pihatyot.html">PIHATYÖT</a></li>
+              </ul>
+            </li>
 
-						<li>
-							<a href="huollot.html">KODIN HUOLLOT</a>
-						</li>
+            <li>
+              <a href="huollot.html">KODIN HUOLLOT</a>
+            </li>
 
-						<li>
-							<a href="yritys.html">YRITYS</a>
-						</li>
-						<li>
-							<a href="yhteystiedot.html">YHTEYSTIEDOT</a>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ASIAKKAILLE <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="huoltokirja.html">SÄHKÖINEN HUOLTOKIRJA</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="asiakastyytyvaisyyslomake.html">PALAUTELOMAKE</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="chat.html">HUOLTOCHAT</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="tilauslomake.html">HUOLTOTILAUS</a></li>
-							</ul>
-						</li>
-						<li><h4><span class="glyphicon glyphicon-phone-alt"></span>  0456 453 444</h4></li>
-						<li>
-							<h4><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></h4>
-						</li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container -->
-		</nav>
+            <li>
+              <a href="yritys.html">YRITYS</a>
+            </li>
+            <li>
+              <a href="yhteystiedot.html">YHTEYSTIEDOT</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ASIAKKAILLE <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="huoltokirja.html">SÄHKÖINEN HUOLTOKIRJA</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="asiakastyytyvaisyyslomake.html">PALAUTELOMAKE</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="chat.html">HUOLTOCHAT</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="tilauslomake.html">HUOLTOTILAUS</a></li>
+              </ul>
+            </li>
+            <li><h4><span class="glyphicon glyphicon-phone-alt"></span>  0456 453 444</h4></li>
+            <li>
+              <h4><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></h4>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
 
-      <div class="container">
+    <div class="container">
 
+      <div class="col-md-8">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            SÄHKOINEN HUOLTOTILAUS
+          Sähkoinen huoltotilaus
           </div>
           <div class="panel-body">
-            <p>Tämä on sähkoinen huoltotilauslomake, jolla voit tilata haluamasi huoltopaketin.
-              <!-- Kun lähetät tilauksen, siitä
-              tulee aina myos tilausvahvistus sähköpostilla määrittelemääsi osoitteeseen.-->        </p>
-
-              <form id="order" method="post" class="form-horizontal">
-                <fieldset>
-
-                  <div class="panel panel-info">
-                    <div class="panel-heading">
-                      Kotihuolto Perus
-                    </div>
-                    <div class="panel-body">
+            <p>
+              Tämä on sähköinen huoltotilauslomake. Valitse haluamasi huoltopaketti ja varaa vapaa aika huoltokalenterista.
+              Kun lähetät tilauksen, siitä
+              tulee aina myos tilausvahvistus sähköpostilla määrittelemääsi osoitteeseen.       </p>
 
 
-                      <div class="panel-group">
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h3 class="panel-title">
-                              <a data-toggle="collapse" href="#kotihuoltoperus">Kotihuolto Perus   <span class="glyphicon glyphicon-collapse-down"></a>
-                              </h3>
-                            </div>
-                            <div id="kotihuoltoperus" class="panel-collapse collapse">
-                              <ul class="list-group">
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ilmanvaihtokoneen puhdistus ja tarkastus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ilmanvaihtokoneen suodattimien vaihto</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Sadevesikourujen tarkastus ja puhdistus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Rännikaivojen tarkastus ja puhdistus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Lattiakaivojen ja hajulukkojen tiiveyden tarkastus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Lattiakaivojen puhdistus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Keskuspölynimurin säiliön tyhjennys</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Vikavirtasuojien toiminnan tarkastus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Palovaroitinten toiminnan tarkastus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Silikonisaumojen kunnon tarkastus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Pesukoneiden letkuliitosten, lämminvesivaraajan liitosten ja jakotukkien tarkastus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Hanojen toiminnan tarkastus</li>
-                                <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Raportointi asiakkaalle</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                        <hr>
-
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="perus"></label>
-                          <div class="col-md-4">
-                            <label class="radio" for="perus-1">
-                              <input type="radio" name="perus" id="perus1" value="KotihuoltoPerus alle150m2" checked="checked">
-                              Alle 150 neliömetrin kodit: 199€ (norm. 289€)
-                            </label>
-                            <label class="radio" for="perus-2">
-                              <input type="radio" name="perus" id="perus2" value="KotihuoltoPerus yli150m2">
-                              Yli 150 neliömetrin kodit: 249€ (norm. 349€)
-                            </label>
-
-                          </div>
-
-                        </div>
-
-                        <p>
-                          Hintaan lisätään mahdolliset tarvikkeet ja varaosat (suodattimet yms.).
-                        </p>
-                      </div>
-                    </div>
-
+              <div id='wrap'>
+                <form id="order" class="form-horizontal">
+                  <fieldset>
 
                     <div class="panel panel-info">
                       <div class="panel-heading">
                         Kotihuolto Laaja
                       </div>
                       <div class="panel-body">
+
                         <div class="panel-group">
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h3 class="panel-title">
-                                <a data-toggle="collapse" href="#kotihuoltolaaja">Kotihuolto Laaja   <span class="glyphicon glyphicon-collapse-down"></a>
+                                <a data-toggle="collapse" href="#kotihuoltoperus">Kotihuolto Perus   <span class="glyphicon glyphicon-collapse-down"></a>
                                 </h3>
                               </div>
-                              <div id="kotihuoltolaaja" class="panel-collapse collapse">
+                              <div id="kotihuoltoperus" class="panel-collapse collapse">
                                 <ul class="list-group">
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ilmanvaihtokoneen puhdistus ja tarkastus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ilmanvaihtokoneen suodattimien vaihto</li>
@@ -220,41 +147,27 @@
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Lattiakaivojen ja hajulukkojen tiiveyden tarkastus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Lattiakaivojen puhdistus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Keskuspölynimurin säiliön tyhjennys</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Keskuspölynimurin suodattimien puhdistus/vaihto</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Vikavirtasuojien toiminnan tarkastus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Palovaroitinten toiminnan tarkastus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Silikonisaumojen kunnon tarkastus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Pesukoneiden letkuliitosten, lämminvesivaraajan liitosten ja jakotukkien tarkastus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Hanojen toiminnan tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Huonekohtaisten ilmanvaihtoventtiilien puhdistus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Sisäpintojen (lattiat, seinät, katot) tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ulko-ovien toiminnan tarkastus ja voitelu</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ulkoverhouksen tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Perustusten tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Vesikatteen, aluskatteen ja läpivientien kunnon ja tiiveyden tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Kattoturvatuotteiden kiinnityksen tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Pintavesien valumasuuntien tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Videoesikatteen alapuolisen tuuletuksen tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ikkuna- ja ovipellitysten kallistusten tarkastus</li>
-                                  <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Tuulettuvan alapohjan tarkastus</li>
                                   <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Raportointi asiakkaalle</li>
                                 </ul>
                               </div>
                             </div>
                           </div>
-                          <!-- Multiple Radios (inline) -->
-                          <hr>
 
                           <div class="form-group">
-                            <label class="col-md-4 control-label" for="laaja"></label>
+                            <label class="col-md-4 control-label" for="perus"></label>
                             <div class="col-md-4">
-                              <label class="radio" for="laaja-1">
-                                <input type="radio" name="perus" id="laaja1" value="KotihuoltoLaaja alle150m2" >
-                                Alle 150 neliömetrin kodit: 349€ (norm. 499€)
+                              <label class="radio" for="perus-1">
+                                <input type="radio" name="perus" id="perus1" value="KotihuoltoPerus alle150m2" checked="checked">
+                                Alle 150 neliömetrin kodit: 199€ (norm. 289€)
                               </label>
-                              <label class="radio" for="laaja-2">
-                                <input type="radio" name="perus" id="laaja2" value="KotihuoltoLaaja yli150m2">
-                                Yli 150 neliömetrin kodit: 399€ (norm. 569€)
+                              <label class="radio" for="perus-2">
+                                <input type="radio" name="perus" id="perus2" value="KotihuoltoPerus yli150m2">
+                                Yli 150 neliömetrin kodit: 249€ (norm. 349€)
                               </label>
 
                             </div>
@@ -264,116 +177,150 @@
                             Hintaan lisätään mahdolliset tarvikkeet ja varaosat (suodattimet yms.).
                           </p>
                         </div>
+
                       </div>
-
-
-                      <!-- Text input-->
-
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">Nimi</label>
-                        <div class="col-md-4">
-                          <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required>
-
+                      <div class="panel panel-info">
+                        <div class="panel-heading">
+                          Kotihuolto Laaja
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">Katuosoite</label>
-                        <div class="col-md-4">
-                          <input id="address" name="address" type="text" placeholder="" class="form-control input-md" required>
+                        <div class="panel-body">
 
+
+                          <div class="panel-group">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h3 class="panel-title">
+                                  <a data-toggle="collapse" href="#kotihuoltolaaja">Kotihuolto Laaja   <span class="glyphicon glyphicon-collapse-down"></a>
+                                  </h3>
+                                </div>
+                                <div id="kotihuoltolaaja" class="panel-collapse collapse">
+                                  <ul class="list-group">
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ilmanvaihtokoneen puhdistus ja tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ilmanvaihtokoneen suodattimien vaihto</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Sadevesikourujen tarkastus ja puhdistus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Rännikaivojen tarkastus ja puhdistus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Lattiakaivojen ja hajulukkojen tiiveyden tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Lattiakaivojen puhdistus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Keskuspölynimurin säiliön tyhjennys</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Keskuspölynimurin suodattimien puhdistus/vaihto</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Vikavirtasuojien toiminnan tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Palovaroitinten toiminnan tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Silikonisaumojen kunnon tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Pesukoneiden letkuliitosten, lämminvesivaraajan liitosten ja jakotukkien tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Hanojen toiminnan tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Huonekohtaisten ilmanvaihtoventtiilien puhdistus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Sisäpintojen (lattiat, seinät, katot) tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ulko-ovien toiminnan tarkastus ja voitelu</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ulkoverhouksen tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Perustusten tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Vesikatteen, aluskatteen ja läpivientien kunnon ja tiiveyden tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Kattoturvatuotteiden kiinnityksen tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Pintavesien valumasuuntien tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Videoesikatteen alapuolisen tuuletuksen tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Ikkuna- ja ovipellitysten kallistusten tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Tuulettuvan alapohjan tarkastus</li>
+                                    <li class="list-group-item"><span class="glyphicon glyphicon-ok"></span>   Raportointi asiakkaalle</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="laaja"></label>
+                              <div class="col-md-4">
+                                <label class="radio" for="laaja-1">
+                                  <input type="radio" name="perus" id="laaja1" value="KotihuoltoLaaja alle150m2" >
+                                  Alle 150 neliömetrin kodit: 349€ (norm. 499€)
+                                </label>
+                                <label class="radio" for="laaja-2">
+                                  <input type="radio" name="perus" id="laaja2" value="KotihuoltoLaaja yli150m2">
+                                  Yli 150 neliömetrin kodit: 399€ (norm. 569€)
+                                </label>
+
+                              </div>
+                            </div>
+
+                            <p>
+                              Hintaan lisätään mahdolliset tarvikkeet ja varaosat (suodattimet yms.).
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">Postinumero ja postitoimipaikka</label>
-                        <div class="col-md-4">
-                          <input id="postaddress" name="postaddress" type="text" placeholder="" class="form-control input-md" required>
 
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="name">Nimi</label>
+                          <div class="col-md-4">
+                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required>
+
+                          </div>
                         </div>
-                      </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="name">Katuosoite</label>
+                          <div class="col-md-4">
+                            <input id="address" name="address" type="text" placeholder="" class="form-control input-md" required>
 
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="email">Sähköposti</label>
-                        <div class="col-md-4">
-                          <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required>
-
+                          </div>
                         </div>
-                      </div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="name">Postinumero ja postitoimipaikka</label>
+                          <div class="col-md-4">
+                            <input id="postaddress" name="postaddress" type="text" placeholder="" class="form-control input-md" required>
 
-                      <!-- Text input-->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="phone">Puhelinnumero</label>
-                        <div class="col-md-4">
-                          <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md" required>
-
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="phone">Ilmansuodattimen merkki ja malli</label>
-                        <div class="col-md-4">
-                          <input id="filter" name="filter" type="text" placeholder="" class="form-control input-md" required>
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="email">Sähköposti</label>
+                          <div class="col-md-4">
+                            <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required>
 
+                          </div>
                         </div>
-                      </div>
 
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="phone">Puhelinnumero</label>
+                          <div class="col-md-4">
+                            <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md" required>
 
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">Valitse toivottu huoltopaivä</label>
-                        <div class="col-md-4">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="phone">Ilmansuodattimen merkki ja malli</label>
+                          <div class="col-md-4">
+                            <input id="filter" name="filter" type="text" placeholder="" class="form-control input-md" required>
+
+                          </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="phone">Valitse vapaa ajankohta klikkaamalla kalenteria (punaisella merkityt ajat on jo varattu):</label>
+
                           <div id='calendar'></div>
+
                         </div>
-                      </div>
+
+
+                      </div> 						<!-- container -->
+
 
                       <!-- Button -->
                       <div class="form-group">
                         <label class="col-md-4 control-label" for="laheta"></label>
                         <div class="col-md-4">
-
-                          <button type="submit" id="submit" name="submit" class="btn btn-primary">Lähetä tilaus</button>
+                          <button type="submit" id="submit" onclick="submit()" name="submit" class="btn btn-primary">Lähetä varaus</button>
                         </div>
                       </div>
 
-                      <p id="response" class="text-info"></p>
                     </fieldset>
                   </form>
-                </div>         <!-- well -->
-              </div>        <!-- row-->
-
-              <div id="fb-root"></div>
-              <script>(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.4";
-                fjs.parentNode.insertBefore(js, fjs);
-              }(document, 'script', 'facebook-jssdk'));</script>
-              <!-- Footer -->
-              <footer>
-                <div class="col-lg-12">
-                  <div class="row">
-                    <div class="pull-left">
-                      <p><span class="glyphicon glyphicon-copyright-mark"></span>  2015 Syfore</p>
-                    </div>
-                    <div class="pull-right">
-
-                      <div class="fb-page" data-href="https://www.facebook.com/pirkanmaankotihuolto" data-width="330"
-                      data-height="70" data-small-header="true"
-                      data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false" data-show-posts="false">
-                      <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pirkanmaankotihuolto">
-                        <a href="https://www.facebook.com/pirkanmaankotihuolto">Pirkanmaan Kotihuolto Oy</a>
-                      </blockquote></div></div>
-                    </div>
-
-                  </div>
-
                 </div>
-              </footer>
+              </div>
             </div>
-            <!-- /.container -->
-            <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
+          </div>
+          <script src="js/bootstrap.min.js"></script>
 
-          </body>
-
-          </html>
+        </body>
+        </html>
