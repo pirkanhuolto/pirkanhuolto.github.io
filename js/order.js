@@ -147,6 +147,7 @@ $(document).ready(function() {
     //events: 'idfukec862tmei8ev11ilimujc@group.calendar.google.com'
     // https://www.google.com/calendar/embed?src=pirkanmaankotihuolto%40gmail.com&ctz=Europe/Helsinki
     events: {
+      timezone: 'Europe/Brussels',
       url:  'pirkanmaankotihuolto@gmail.com',
       error: function() {
         $('#script-warning').show();
