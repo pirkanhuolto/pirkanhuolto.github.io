@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+  <meta charset='utf-8' />
+  <link href='fullcalendar.css' rel='stylesheet' />
+  <link href='fullcalendar.print.css' rel='stylesheet' media='print' />
+  <script src='lib/moment.min.js'></script>
+  <script src='lib/jquery.min.js'></script>
+  <script src='fullcalendar.js'></script>
+  <script src='gcal.js'></script>
+  <script src='lang/fi.js'></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,144 +18,170 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <title>Pirkanmaan Kotihuolto</title>
+  <title>Pirkanmaan Kotihuolto</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <script>
 
+  $(document).ready(function() {
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    $('#book').submit(function(e){
+      // 1443168000000 in milliseconds
+      e.preventDefault();
+      var data = {
+        username: document.getElementById('username').value,
+        pwd: document.getElementById('pwd').value
+      };
+      this.reset();
+
+      $.getJSON("https://script.google.com/macros/s/AKfycbwsgdyw2I8qlppTKMTsYfVkmVmEQNPxYJr7ip3_7_MFwyuajqE/exec"+"?callback=?",
+      {user:JSON.stringify(data)},
+      function (result) {
+        //alert(JSON.stringify(data));
+        if(result.url) {
+          window.location.href = result.url;
+          $('#response').html('Huoltokirja tallennettu koneelle. Katso Downloads-kansio.').addClass('success').fadeIn('fast');
+
+        } else {
+          $('#response').html('Huoltokirjaa ei loydy. Ota yhteyttä Pirkanmaan Kotihuoltoon.').addClass('error').fadeIn('fast');
+
+        }
+
+      } );
+
+    });
+
+  });
+
+  </script>
 
 </head>
-
 <body>
-
-
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="index.html" ><span><img style="max-width:70px; margin-top: -5px;"
-                src="images/logo_stamp.jpg"></span> PIRKANMAAN KOTIHUOLTO OY</a>
-        </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav" >
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html" ><span><img style="max-width:70px; margin-top: -5px;"
+					src="images/logo_stamp.jpg"></span> PIRKANMAAN KOTIHUOLTO OY</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav" >
 
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PALVELUT <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="palvelut.html">HUOLTOPAKETIT</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="pihatyot.html">PIHATYÖT</a></li>
-                </ul>
-              </li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PALVELUT <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="palvelut.html">HUOLTOPAKETIT</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="pihatyot.html">PIHATYÖT</a></li>
+							</ul>
+						</li>
 
-              <li>
-                <a href="huollot.html">KODIN HUOLLOT</a>
-              </li>
+						<li>
+							<a href="huollot.html">KODIN HUOLLOT</a>
+						</li>
 
-              <li>
-                <a href="yritys.html">YRITYS</a>
-              </li>
-              <li>
-                <a href="yhteystiedot.html">YHTEYSTIEDOT</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ASIAKKAILLE <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="huoltokirja.html">SÄHKÖINEN HUOLTOKIRJA</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="asiakastyytyvaisyyslomake.html">PALAUTELOMAKE</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="chat.html">HUOLTOCHAT</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="tilauslomake.html">HUOLTOTILAUS</a></li>
-                </ul>
-              </li>
-              <li><h4><span class="glyphicon glyphicon-phone-alt"></span>  0456 453 444</h4></li>
-              <li>
-                <h4><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></h4>
-              </li>
-
-            </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-        </div>
-          <!-- /.container -->
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <!-- Portfolio Item Heading -->
-
-    <div class="row">
+						<li>
+							<a href="yritys.html">YRITYS</a>
+						</li>
+						<li>
+							<a href="yhteystiedot.html">YHTEYSTIEDOT</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ASIAKKAILLE <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="huoltokirja.html">SÄHKÖINEN HUOLTOKIRJA</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="asiakastyytyvaisyyslomake.html">PALAUTELOMAKE</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="chat.html">HUOLTOCHAT</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="tilauslomake.html">HUOLTOTILAUS</a></li>
+							</ul>
+						</li>
+						<li><h4><span class="glyphicon glyphicon-phone-alt"></span>  0456 453 444</h4></li>
+						<li>
+							<h4><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></h4>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container -->
+		</nav>
+    <div class="container">
 
       <!-- Portfolio Item Heading -->
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-      SÄHKÖINEN HUOLTOKIRJA
 
-        </div>
-        <div class="panel-body">
-        <p> Tarjoamme asiakkaille nykyaikaisen sähköisen huoltokirjan. Sen avulla kodin huoltohistoria pysyy tallessa ja tiedot ajantasalla. <span><img style="float-left" src="images/stamp.png" alt="" /></span>
-</p>
+      <div class="row">
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            SÄHKÖINEN HUOLTOKIRJA
 
           </div>
-        </div>
-                </div>
+          <div class="panel-body">
+            <p> Tarjoamme asiakkaille nykyaikaisen sähköisen huoltokirjan. Sen avulla kodin huoltohistoria pysyy tallessa ja tiedot ajantasalla. <span><img style="float-left" src="images/stamp.png" alt="" /></span>
+            </p>
 
+            <div id='wrap'>
+              <form id="book" class="form-horizontal">
+                <fieldset>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="username">Käyttäjätunnus</label>
+                    <div class="col-md-4">
+                      <input id="username" name="username" type="text" placeholder="" class="form-control input-md" required>
 
-                <div id="fb-root"></div>
-                <script>(function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v2.4";
-                  fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));</script>
-                <footer>
-                    <div class="col-lg-12">
-                      <div class="row">
-                      <div class="pull-left">
-                          <p><span class="glyphicon glyphicon-copyright-mark"></span>  2015 Syfore</p>
-                      </div>
-                          <div class="pull-right">
-
-                          <div class="fb-page" data-href="https://www.facebook.com/pirkanmaankotihuolto" data-width="330"
-                      data-height="70" data-small-header="true"
-                      data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false" data-show-posts="false">
-                      <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pirkanmaankotihuolto">
-                        <a href="https://www.facebook.com/pirkanmaankotihuolto">Pirkanmaan Kotihuolto Oy</a>
-                      </blockquote></div></div>
                     </div>
                   </div>
-
-
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="pwd">Salasana</label>
+                    <div class="col-md-4">
+                      <input id="pwd" name="pwd" type="password" placeholder="" class="form-control input-md" required>
+                    </div>
                   </div>
-                </footer>
-              </div>
-              <!-- /.container -->
+                  <!-- Button -->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="laheta"></label>
+                    <div class="col-md-4">
+                      <button type="submit" id="submit" name="submit" class="btn btn-primary">Lataa huoltokirja</button>
+                    </div>
+                  </div>
+                  <p id="response" class="text-info"></p>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
 
-              <!-- jQuery -->
-              <script src="js/jquery.js"></script>
+      </div>
 
-              <!-- Bootstrap Core JavaScript -->
-              <script src="js/bootstrap.min.js"></script>
+      <footer>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="pull-left">
+              <p><span class="glyphicon glyphicon-copyright-mark"></span>  2015 Syfore</p>
+            </div>
 
-            </body>
+          </div>
 
-            </html>
+
+        </div>
+      </footer>
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+  </html>
