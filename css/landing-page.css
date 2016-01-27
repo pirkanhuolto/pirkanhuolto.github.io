@@ -122,13 +122,20 @@ height: 600px;
 }
 
 .banner1 {
-height: 600px;
+height: 400px;
     padding: 100px 0;
     color: #f8f8f8;
     background: url(../images/IMG_1314.JPG) no-repeat center center;
     background-size: cover;
 }
 
+.norppabanner {
+height: 400px;
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(../images/norppa.jpg) no-repeat center center;
+    background-size: cover;
+}
 
 .banner h2 {
     margin: 0;
